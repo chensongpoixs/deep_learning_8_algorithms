@@ -42,6 +42,14 @@ def main() -> None:
         path = ROOT / "demos" / demo
         print(f"\n========== Running {demo} ==========")
         run_script(path)
+
+    try:
+        import generate_principle_cards
+        print("\n========== Generating Chinese principle cards ==========")
+        generate_principle_cards.main()
+    except Exception as e:
+        print(f"生成中文详细原理图时发生错误: {e}")
+
     print("\n全部 Demo 运行完成，图片已输出到 outputs/ 目录。")
 
 
